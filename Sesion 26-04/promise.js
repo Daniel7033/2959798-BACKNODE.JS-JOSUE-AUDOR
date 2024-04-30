@@ -21,18 +21,19 @@ instructor(true).then((respuesta) =>{
 });
 */
 
+//Actividad
 function instructor(continuar) {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             while (continuar !== "no") {
                 alert("Comencemos el examen");
-                let res1 = prompt("1. ¿HTML y CSS son lenguajes de programación?", "Respuesta")
-                if (res1 !== "true") {
+                let res1 = prompt("1. ¿HTML y CSS son lenguajes de programación? Si/No", "Respuesta")
+                if (res1 !== "no") {
                     reject(new Error("Incorrecto."));
                     continuar = prompt("¿Quieres seguir?", "Respuesta")
                     if (continuar == "Si" || continuar == "si") {
-                        let res2 = prompt("2. ¿La herencia hace parte de Bases de Datos DML?", "Respuesta")
-                        if (res2 !== "false"){
+                        let res2 = prompt("2. ¿La herencia hace parte de Bases de Datos DML? Si/No", "Respuesta")
+                        if (res2 !== "no"){
                             reject(new Error("Incorrecto."));
                             continuar = prompt("¿Quieres seguir?", "Respuesta")
                             if (continuar == "Si" || continuar == "si"){
@@ -55,7 +56,7 @@ function instructor(continuar) {
                             resolve(correcto);
                             continuar = prompt("¿Quieres seguir?", "Respuesta")
                             if (continuar == "Si" || continuar == "si"){
-                                let res3 = prompt("3. ¿Que hace un callback?", "Respuesta");
+                                let res3 = prompt("3. ¿Que hace un callback? Si/No", "Respuesta");
                                 if (res3 !== "llama a una funcion desde un parametro"){
                                     reject(new Error("Incorrecto"));
                                     alert("Eso es todo");
@@ -123,8 +124,8 @@ function instructor(continuar) {
         }, 1000);
     });
 }
-instructor("si").then((correcto) =>{
-    alert(correcto);
-}).catch((error)=>{
-    error(error.message);
-});
+// instructor("si").then((correcto) =>{
+//     alert(correcto);
+// }).catch((error)=>{
+//     error(error.message);
+// });
